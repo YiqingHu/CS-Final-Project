@@ -33,7 +33,6 @@ public abstract class Board {
     }
 
     int cells = xSize * ySize; //area
-    int temp = 0;
     Random rand = new Random();
 
     for (int temp = 0; temp < numMines; temp++){  //while there are still mines
