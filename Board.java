@@ -8,9 +8,9 @@ public abstract class Board {
   protected int[][] board; //current board state
 
   //cells
-  public static final int Blank = 0;
-  public static final int Known = 1;
-  public static final int Mine = 2;
+  public static final int Blank = -1;
+  public static final int Known = -2;
+  public static final int Mine = -3;
 
   public Board(int xSize, int ySize, int numMines) {
 
