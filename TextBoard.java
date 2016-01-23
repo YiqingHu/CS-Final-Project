@@ -61,8 +61,10 @@ public class TextBoard extends Board {
           case 7:
           case 8:
           case 9:
-          case 0:
             System.out.print(board[j][i]);
+            break;
+          case 0:
+            System.out.print(".");
             break;
         }
       }
