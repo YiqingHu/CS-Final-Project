@@ -82,7 +82,7 @@ public abstract class Board {
      else maxX = x + 2;
 
      if (y >= ySize - 1) maxY = ySize;
-     else maxY = y + 2
+     else maxY = y + 2;
 
     //surrounding cells
     for (int i = minX; i < maxX; i++) {
@@ -151,7 +151,7 @@ public abstract class Board {
      else maxX = x + 2;
 
      if (y >= ySize - 1) maxY = ySize;
-     else maxY = y + 2
+     else maxY = y + 2;
 
     //checking surrounding cells for mines
     for (int i = minX; i < maxX; i++) {
