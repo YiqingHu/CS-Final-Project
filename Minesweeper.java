@@ -1,14 +1,25 @@
 import java.io.*;
 public class Minesweeper {
+
+  //instance variables
   private Board board;
   private StreamTokenizer tok;
   private boolean done, quit, win;
   private int lastCell;
+
+  //constructor
+  //preconditions: xSize, ySize, and mines are integers.
+  //               mines < xSize * ySize
+  //postconditions: 
+  //
   public Minesweeper(int xSize, int ySize, int mines) {
     board = new TextBoard(xSize, ySize, mines);
     tok = new StreamTokenizer(new InputStreamReader(System.in));
     done = win = quit = false;
   }
+
+  //preconditions: 
+  //postconditions:
   public void play() throws IOException {
     long startTime = System.currentTimeMillis();
     while (!done) {
@@ -52,6 +63,8 @@ public class Minesweeper {
     System.out.println("Total game time: "+(elapsedTime/1000)+" seconds");
   }
 
+  //preconditions: 
+  //postconditions: 
   private void doCommand() throws IOException {
     int x, y;
     if (tok.sval.equals("reveal")) {
@@ -92,6 +105,7 @@ public class Minesweeper {
       System.out.println("Unknown command. Try 'help' for a list of all possible commands.");
     }
   }
+
 
   public static void main(String[] args) throws IOException {
     Minesweeper game;
