@@ -4,7 +4,7 @@ public class TestPolyline{
   System.out.println(l1);
   l1.appendPoint(new Point(1,1));
   l1.appendPoint(new Point(2,2));
-  l1.appendPoint(new Point(3,3));
+  l1.appendPoint(3,3);
   System.out.println(l1);
  }
 }
