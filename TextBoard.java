@@ -1,7 +1,13 @@
 public class TextBoard extends Board {
+  //instance variables
   private int colLength, rowLength;
   private String[] colNums, rowNums;
   private String spacer;
+
+  //constructor
+  //preconditions: xSize, ySize, numMines are integers
+  //               numMines < xSize * YSize
+  //postconditions:
   public TextBoard(int xSize, int ySize, int numMines) {
     super(xSize, ySize, numMines);
     colLength = Integer.toString(xSize-1).length();
@@ -29,6 +35,9 @@ public class TextBoard extends Board {
       rowNums[i] = row.toString();
     }
   }
+
+  //preconditions:
+  //postconditions:
   public void draw() {
     System.out.println();
     for (int i = 0; i < colLength; i++) {
