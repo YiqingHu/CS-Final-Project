@@ -12,6 +12,12 @@ public abstract class Board {
   public static final int Known = -2;
   public static final int Mine = -3;
 
+  //constructor
+  //preconditions: xSize, ySize and numMines are integers.
+  //               numMines < xSize * ySize
+  //postconditions: set up a board with width xSize, height ySize and 
+  //                place mines randomly on the board.
+  //O(n^2)
   public Board(int xSize, int ySize, int numMines) {
 
     //instance variables
@@ -49,6 +55,11 @@ public abstract class Board {
   public abstract void draw();
 
   //reveal cell at (x,y)
+  //preconditions: x and y are integer and
+  //               x < xSize
+  //               y < ySize
+  //postconditions:
+
   public int reveal(int x, int y) {
     switch (board[x][y]) {
       case Known:
