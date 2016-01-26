@@ -12,6 +12,11 @@ public abstract class Board {
   public static final int Known = -2;
   public static final int Mine = -3;
 
+//time: O(N^2)
+//preconditions: int xSize, int ySize, int numMines
+//postconditions: instance variables are defined; 
+//                boolean array mines is created with random mines 
+//                int array board is created with blank-value cells
   public Board(int xSize, int ySize, int numMines) {
 
     //instance variables
@@ -47,7 +52,10 @@ public abstract class Board {
   }
 
   public abstract void draw();
-
+  
+  //time: O(!)
+  //preconditions: int x, y
+  //postconditions: cell at (x, y) is revealed
   //reveal cell at (x,y)
   public int reveal(int x, int y) {
     switch (board[x][y]) {
@@ -65,7 +73,10 @@ public abstract class Board {
     }
     return board[x][y];
   }
-
+  
+  //runtime: O(N^2)
+  //preconditions: int x,y
+  //postconditions: the 8 cells surrounding the cell at (x, y) are revealed
   //reveal more cells
   public void revealMore(int x, int y) {
     int minX, minY, maxX, maxY;
@@ -96,7 +107,10 @@ public abstract class Board {
       }
     }
   }
-
+  
+  //time: O(1)
+  //precondition: int x,y
+  //postcondition: cell at (x, y) is marked
   public boolean mark(int x, int y) {
     if ((numMines - numKnown) > 0 && board[x][y] == Blank) {
       board[x][y] = Known;
@@ -106,6 +120,9 @@ public abstract class Board {
     else return false;
   }
 
+  //time: O(1)
+  //precondition: int x,y
+  //postcondition: cell at (x, y) is unmarked
   public boolean unmark(int x, int y) {
     if (board[x][y] == Known) {
       board[x][y] = Blank;
@@ -114,27 +131,36 @@ public abstract class Board {
     }
     else return false;
   }
-
+  
+  //gets width
   public int getWidth() {
     return xSize;
   }
-
+  
+  //gets height
   public int getHeight() {
     return ySize;
   }
 
+  //gets number of mines
   public int getMines() {
     return numMines;
   }
-
+  
+  //gets number of known cells 
   public int getKnown() {
     return numKnown;
   }
 
+  //gets number of unknown cells
   public int getBlank() {
     return numBlank;
   }
 
+  //time: O(N^2)
+  //preconditions: int x,y
+  //postconditions: checks surroudning 8 cells for mines to find # of mines near 
+  //                returns the number of mines near
   private int closeMines(int x, int y) {
     int minX, minY, maxX, maxY;
     int result = 0;

@@ -1,14 +1,28 @@
 import java.io.*;
 public class Minesweeper {
+
+  //instance variables
   private Board board;
-  private StreamTokenizer tok;
+  private StreamTokenizer tok; // Tokenizer for commands
   private boolean done, quit, win;
   private int lastCell;
+
+  //time: O(1)
+  //constructor
+  //preconditions: xSize, ySize, and mines are integers.
+  //               mines < xSize * ySize
+  //postconditions: board of size xSize * ySize is created with (mines) mines hidden
+  //                command tokenizer (will read input) is set up
+  //                booleans done, win, and quit are set to falae
   public Minesweeper(int xSize, int ySize, int mines) {
     board = new TextBoard(xSize, ySize, mines);
     tok = new StreamTokenizer(new InputStreamReader(System.in));
     done = win = quit = false;
   }
+
+  //time: O(n^2); 
+  //preconditions: done, win, quit are false
+  //postconditions: done will be true; win may be true
   public void play() throws IOException {
     long startTime = System.currentTimeMillis();
     while (!done) {
@@ -51,7 +65,10 @@ public class Minesweeper {
     }
     System.out.println("Total game time: "+(elapsedTime/1000)+" seconds");
   }
-
+  //time: O(1)
+  //preconditions: the board is blank; quit is false
+  //postconditions: some tiles have been marked/unmarked or revealed
+  //                quit may be true
   private void doCommand() throws IOException {
     int x, y;
     if (tok.sval.equals("reveal")) {
@@ -79,9 +96,10 @@ public class Minesweeper {
       board.unmark(x, y);
     }
     else if (tok.sval.equals("help")) {
-      System.out.println("reveal  ");
-      System.out.println("mark  ");
-      System.out.println("unmark  ");
+      System.out.println("Possible commands:")
+      System.out.println("reveal a b");
+      System.out.println("mark a b");
+      System.out.println("unmark a b");
       System.out.println("help");
       System.out.println("quit");
     }
@@ -92,6 +110,7 @@ public class Minesweeper {
       System.out.println("Unknown command. Try 'help' for a list of all possible commands.");
     }
   }
+
 
   public static void main(String[] args) throws IOException {
     Minesweeper game;

@@ -1,7 +1,14 @@
 public class TextBoard extends Board {
+  //instance variables
   private int colLength, rowLength;
   private String[] colNums, rowNums;
   private String spacer;
+
+  //constructor
+  //time: O(N^2)
+  //preconditions: xSize, ySize, numMines are integers
+  //               numMines < xSize * ySize
+  //postconditions: a board suze xSize * ySize is created with numMines mines
   public TextBoard(int xSize, int ySize, int numMines) {
     super(xSize, ySize, numMines);
     colLength = Integer.toString(xSize-1).length();
@@ -29,6 +36,11 @@ public class TextBoard extends Board {
       rowNums[i] = row.toString();
     }
   }
+  
+  //time: O(N^2)
+  //preconditions: int colLength, xSize, ySize 
+  //               int board [][], colNums[], rowNums[]
+  //postconditions: board is drawn (unknown tiles are #, marked tiles are X, and mines are *)
   public void draw() {
     System.out.println();
     for (int i = 0; i < colLength; i++) {
