@@ -1,5 +1,5 @@
 public interface Resizable{
 
-  public double Resize(int percent);
+  public double resize(int percent);
   
 }
