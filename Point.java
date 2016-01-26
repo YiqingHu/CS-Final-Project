@@ -7,7 +7,7 @@ public class Point {
   	//precondition: x and y are integers
   	//postcondition: create a class point with instance variables
   	//               _x, x, and _y, y;
-  	//O(0)
+  	//O(1)
  	public Point(int x, int y){
   		_x = x;
   		_y = y;
@@ -16,7 +16,7 @@ public class Point {
   	//precondition: _x and _y are integers
   	//postcondition: when class Point is printed, iot will appear
   	//               as (_x,_y)
-  	//O(0)
+  	//O(1)
   	public String toString() {
   		return "(" + _x + "," + _y + ")";
   	}
