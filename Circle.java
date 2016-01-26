@@ -6,7 +6,7 @@ public class Circle implements GeometricObject{
     _radius = 0.0;
   }
   
-  public Circle(int r){
+  public Circle(double r){
     _radius = r;
   }
   
@@ -15,7 +15,11 @@ public class Circle implements GeometricObject{
   }
   
   public double getPerimeter(){
-    return (getRadius() * 2 * Math.PI);
+    return (getRadius() * 2.0 * Math.PI);
+  }
+  
+  public double getArea(){
+    return (getRadius() * getRadius() * Math.PI);
   }
   
 }
