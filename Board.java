@@ -44,7 +44,8 @@ public abstract class Board {
     int cells = xSize * ySize; //area
     Random rand = new Random();
 
-    for (int temp = 0; temp < numMines; temp++){  //while there are still mines
+    //setting up mines
+    for (int temp = 0; temp < numMines; temp++){  
       int randX = (int) (Math.random() * xSize);
       int randY = (int) (Math.random() * ySize);
 
