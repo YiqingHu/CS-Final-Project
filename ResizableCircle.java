@@ -1,6 +1,6 @@
 public class ResizableCircle extends Circle implements Resizable{
 
-  public ResizeableCircle(double radius){
+  public ResizableCircle(double radius){
     super(radius);
   }
   
