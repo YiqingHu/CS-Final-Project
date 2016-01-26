@@ -2,10 +2,6 @@ public class Circle implements GeometricObject{
 
   private double _radius;
   
-  public Circle(){
-    _radius = 0.0;
-  }
-  
   public Circle(double r){
     _radius = r;
   }
