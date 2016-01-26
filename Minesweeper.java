@@ -20,7 +20,7 @@ public class Minesweeper {
     done = win = quit = false;
   }
 
-  //time: O(n^2); 
+  //time: O(N^2); 
   //preconditions: done, win, quit are false
   //postconditions: done will be true; win may be true
   public void play() throws IOException {
@@ -115,7 +115,7 @@ public class Minesweeper {
   public static void main(String[] args) throws IOException {
     Minesweeper game;
     if (args.length < 3) {
-      System.out.println("Usage: java Minesweeper   ");
+      System.out.println("Usage: java Minesweeper xLength yLength numMines");
       System.exit(0);
     }
     else {
