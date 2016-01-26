@@ -6,7 +6,7 @@ public class Circle implements GeometricObject{
     _radius = r;
   }
   
-  publiv getRadius(){
+  public double getRadius(){
     return _radius;
   }
   
