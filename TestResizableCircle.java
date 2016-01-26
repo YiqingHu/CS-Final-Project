@@ -1,4 +1,4 @@
-public class TestResizableCircle.java{
+public class TestResizableCircle{
 
   public static void main(String [] args){
   
