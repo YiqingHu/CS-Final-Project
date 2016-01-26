@@ -12,11 +12,15 @@ public abstract class Board {
   public static final int Known = -2;
   public static final int Mine = -3;
 
+<<<<<<< HEAD
+=======
 //time: O(N^2)
 //preconditions: int xSize, int ySize, int numMines
+//               numMines < xSize * ySize
 //postconditions: instance variables are defined; 
 //                boolean array mines is created with random mines 
 //                int array board is created with blank-value cells
+>>>>>>> origin/Arraylist-Project
   public Board(int xSize, int ySize, int numMines) {
 
     //instance variables
@@ -53,10 +57,13 @@ public abstract class Board {
 
   public abstract void draw();
   
-  //time: O(!)
-  //preconditions: int x, y
-  //postconditions: cell at (x, y) is revealed
+  //time: O(1)
   //reveal cell at (x,y)
+  //preconditions: x and y are integer and
+  //               0 <= x < xSize
+  //               0 <= y < ySize
+  //postconditions: cell at (x, y) is revealed
+
   public int reveal(int x, int y) {
     switch (board[x][y]) {
       case Known:
@@ -76,6 +83,8 @@ public abstract class Board {
   
   //runtime: O(N^2)
   //preconditions: int x,y
+  //               0 <= x < xSize
+  //               0 <= y < ySize
   //postconditions: the 8 cells surrounding the cell at (x, y) are revealed
   //reveal more cells
   public void revealMore(int x, int y) {
@@ -110,6 +119,8 @@ public abstract class Board {
   
   //time: O(1)
   //precondition: int x,y
+  //               0 <= x < xSize
+  //               0 <= y < ySize
   //postcondition: cell at (x, y) is marked
   public boolean mark(int x, int y) {
     if ((numMines - numKnown) > 0 && board[x][y] == Blank) {
@@ -122,6 +133,8 @@ public abstract class Board {
 
   //time: O(1)
   //precondition: int x,y
+  //               0 <= x < xSize
+  //               0 <= y < ySize
   //postcondition: cell at (x, y) is unmarked
   public boolean unmark(int x, int y) {
     if (board[x][y] == Known) {
@@ -159,6 +172,8 @@ public abstract class Board {
 
   //time: O(N^2)
   //preconditions: int x,y
+  //               0 <= x < xSize
+  //               0 <= y < ySize
   //postconditions: checks surroudning 8 cells for mines to find # of mines near 
   //                returns the number of mines near
   private int closeMines(int x, int y) {
