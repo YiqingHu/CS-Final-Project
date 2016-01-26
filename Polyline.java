@@ -19,7 +19,7 @@ public class Polyline{
 
  	//precondition: point is a point
  	//postcondition: append point to the list points
- 	//O(0)
+ 	//O(1)
 	public void appendPoint(Point point){
   		points.add(point);
  	}
