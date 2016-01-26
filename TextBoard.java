@@ -40,7 +40,8 @@ public class TextBoard extends Board {
   //time: O(N^2)
   //preconditions: int colLength, xSize, ySize 
   //               int board [][], colNums[], rowNums[]
-  //postconditions: board is drawn (unknown tiles are #, marked tiles are X, and mines are *)
+  //postconditions: board is drawn 
+  //                unknown tiles are #, marked tiles are X, and mines are *
   public void draw() {
     System.out.println();
     for (int i = 0; i < colLength; i++) {
