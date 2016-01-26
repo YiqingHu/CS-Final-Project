@@ -8,7 +8,7 @@ public class TextBoard extends Board {
   //time: O(N^2)
   //preconditions: xSize, ySize, numMines are integers
   //               numMines < xSize * ySize
-  //postconditions: a board suze xSize * ySize is created with numMines mines
+  //postconditions: a board sizes xSize * ySize is created with numMines mines
   public TextBoard(int xSize, int ySize, int numMines) {
     super(xSize, ySize, numMines);
     colLength = Integer.toString(xSize-1).length();
