@@ -1,4 +1,4 @@
-public interface Resizeable{
+public interface Resizable{
 
   public double Resize(int percent);
   
